@@ -1,3 +1,4 @@
+// ref: https://medium.com/inato/expressive-error-handling-in-typescript-and-benefits-for-domain-driven-design-70726e061c86
 export class Left<L, A> {
   readonly value: L;
 

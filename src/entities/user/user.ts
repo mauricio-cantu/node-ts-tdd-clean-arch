@@ -9,6 +9,7 @@ export class User {
   private _lastName: string;
   private _email: string;
   private _age: number;
+  private _id?: number;
 
   public get firstName () {
     return this._firstName;
@@ -26,15 +27,20 @@ export class User {
     return this._age;
   }
 
-  private constructor (firstName: string, lastName: string, email: string, age: number) {
+  public get id () {
+    return this._id;
+  }
+
+  private constructor (firstName: string, lastName: string, email: string, age: number, id?: number) {
     this._firstName = firstName;
     this._lastName = lastName;
     this._email = email;
     this._age = age;
+    this._id = id;
   }
 
   static create (userData: UserData): Either<InvalidNameError | InvalidEmailError | InvalidAgeError, User> {
-    const { firstName, lastName, age, email } = userData;
+    const { firstName, lastName, age, email, id } = userData;
     if (!isValidName(firstName)) {
       return left(new InvalidNameError(firstName));
     }
@@ -52,7 +58,7 @@ export class User {
     }
         
     return right(new User(
-      firstName, lastName, email, age
+      firstName, lastName, email, age, id
     ));
   }
 }

@@ -35,5 +35,9 @@ export class InMemoryUserRepository implements UserRepository {
     return user;
   }
 
+  async findById (userId: number): Promise<UserData | null> {
+    return this._data.find((user) => user.id === userId) || null;
+  }
+
 
 }
