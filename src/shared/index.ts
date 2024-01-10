@@ -1,2 +1,2 @@
-export * from './either'
-export * from './validators'
+export * from './either';
+export * from './validators';

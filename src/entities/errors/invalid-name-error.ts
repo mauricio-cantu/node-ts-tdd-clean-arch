@@ -1,7 +1,7 @@
 export class InvalidNameError extends Error {
-    readonly name = 'InvalidNameError'
+  readonly name = 'InvalidNameError';
 
-    constructor(name: string) {
-        super(`Invalid name: ${name}`)
-    }
+  constructor (name: string) {
+    super(`Invalid name: ${name}`);
+  }
 }

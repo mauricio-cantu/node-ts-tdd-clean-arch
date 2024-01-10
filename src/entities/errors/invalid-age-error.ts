@@ -1,7 +1,7 @@
 export class InvalidAgeError extends Error {
-    readonly name = 'InvalidAgeError'
+  readonly name = 'InvalidAgeError';
 
-    constructor(age: number) {
-        super(`Invalid age: ${age}`)
-    }
+  constructor (age: number) {
+    super(`Invalid age: ${age}`);
+  }
 }

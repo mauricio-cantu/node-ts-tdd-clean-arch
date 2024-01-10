@@ -1,5 +1,5 @@
 {
-  "name": "node-ts-api-tdd",
+  "name": "node-ts-tdd-clean-arch",
   "version": "1.0.0",
   "description": "Node.js/Typescript API developed with TDD and Clean Architecture",
   "main": "index.js",
