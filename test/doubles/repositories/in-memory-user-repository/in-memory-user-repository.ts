@@ -39,5 +39,9 @@ export class InMemoryUserRepository implements UserRepository {
     return this._data.find((user) => user.id === userId) || null;
   }
 
+  clear (): void {
+    this._data = [];
+  }
+
 
 }
