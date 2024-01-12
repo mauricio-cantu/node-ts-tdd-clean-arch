@@ -6,5 +6,5 @@ export interface UserRepository {
     findById(userId: number): Promise<UserData | null>
     findAll?(): Promise<UserData[]>
     edit(user: UserData): Promise<UserData | null>
-    delete?(userId: number): Promise<void>
+    delete(userId: number): Promise<void>
 }
