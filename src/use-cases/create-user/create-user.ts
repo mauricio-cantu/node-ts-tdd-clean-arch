@@ -1,6 +1,6 @@
 import { EmailAlreadyExistsError, InvalidAgeError, InvalidEmailError, InvalidNameError, User, UserData } from '@src/entities';
-import { UseCase } from '../interfaces';
-import { UserRepository } from '../interfaces/user-repository';
+import { UseCase } from '../../shared/interfaces';
+import { UserRepository } from '../../shared/interfaces/user-repository';
 import { Either, left, right } from '@src/shared';
 
 type CreateUserUseCaseReturn = Either<InvalidNameError | InvalidEmailError | InvalidAgeError | EmailAlreadyExistsError, UserData>

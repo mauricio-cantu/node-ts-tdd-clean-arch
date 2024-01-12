@@ -1,5 +1,5 @@
 import { UserData } from '@src/entities';
-import { UserRepository } from '@src/use-cases/interfaces/user-repository';
+import { UserRepository } from '@src/shared/interfaces/user-repository';
 
 export class InMemoryUserRepository implements UserRepository {
     
