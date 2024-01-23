@@ -1,6 +1,6 @@
-import { InvalidParameterError, PaginationData, UserData } from '@src/entities';
+import { InvalidParameterError, PaginationData, UserData, Pagination, PaginationResult } from '@src/entities';
 import { Either, left, right } from '@src/shared';
-import { Pagination, PaginationResult, UseCase } from '@src/shared/interfaces';
+import { UseCase } from '@src/shared/interfaces';
 import { UserRepository } from '@src/shared/interfaces/user-repository';
 
 export interface GetUsersRequestData {
