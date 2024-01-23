@@ -1,4 +1,5 @@
 import { UserData } from '@src/entities';
+import { Pagination, PaginationResult } from '@src/entities';
 import { UserRepository } from '@src/shared/interfaces/user-repository';
 
 export class InMemoryUserRepository implements UserRepository {
@@ -24,6 +25,19 @@ export class InMemoryUserRepository implements UserRepository {
     return _user;
   }
 
+  async findAll (pagination: Pagination): Promise<PaginationResult<UserData>> {
+    const totalDataCount = this._data.length;
+    const results = this.data.slice(pagination.offset, pagination.limit + pagination.offset);
+    return {
+      data: results,
+      pagination: {
+        currentPage: pagination.page,
+        totalPages: Math.ceil(totalDataCount / pagination.limit),
+        totalRows: totalDataCount
+      }
+    };
+  }
+
   async findByEmail (email: string): Promise<UserData | null> {
     return this._data.find((user) => user.email === email) || null;
   }
@@ -45,6 +59,7 @@ export class InMemoryUserRepository implements UserRepository {
 
   clear (): void {
     this._data = [];
+    this._autoIncrement = 1;
   }
 
 

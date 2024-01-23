@@ -3,11 +3,13 @@ import { UseCase } from '../../shared/interfaces';
 import { Either, left, right } from '@src/shared';
 import { UserRepository } from '../../shared/interfaces/user-repository';
 
+type EditUserUseCaseReturn = Either<InvalidNameError | InvalidEmailError | InvalidAgeError | EmailAlreadyExistsError | UserNotFoundError, UserData>;
+
 export class EditUserUseCase implements UseCase {
 
   constructor (private userRepository: UserRepository) {}
     
-  async execute (data: UserData): Promise<Either<UserNotFoundError | EmailAlreadyExistsError | InvalidNameError | InvalidEmailError | InvalidAgeError, UserData>> {
+  async execute (data: UserData): Promise<EditUserUseCaseReturn> {
     const user = await this.userRepository.findById(<number> data.id);
     
     if(!user) {
