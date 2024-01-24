@@ -1,18 +1,8 @@
-import { Either, left, right } from '@src/shared';
 import { PaginationData } from './pagination-data';
-import { InvalidParameterError } from '../errors';
+import { InvalidParameterError, Either, left, right } from '../../errors';
 
 const DEFAULT_LIMIT = 10;
 const MAX_LIMIT = 30;
-
-export interface PaginationResult<T> {
-  data: T[];
-  pagination: {
-    totalRows: number;
-    currentPage: number;
-    totalPages: number;
-  }
-}
 
 export class Pagination {
 

@@ -1,7 +1,7 @@
 import { UserBuilder } from '@test/builders/user-builder';
 import { InMemoryUserRepository } from '@test/doubles/repositories/in-memory-user-repository/in-memory-user-repository';
-import { GetUserUseCase } from '@src/use-cases';
-import { UserNotFoundError } from '@src/entities';
+import { GetUserUseCase } from '@src/domain/use-cases';
+import { UserNotFoundError } from '@src/domain/errors';
 
 describe('GetUserUseCase', () => {
   const userRepository = new InMemoryUserRepository();

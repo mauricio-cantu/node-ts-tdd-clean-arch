@@ -1,7 +1,7 @@
-import { EmailAlreadyExistsError, InvalidAgeError, InvalidEmailError, InvalidNameError, User, UserData, UserNotFoundError } from '@src/entities';
-import { UseCase } from '../../shared/interfaces';
-import { Either, left, right } from '@src/shared';
-import { UserRepository } from '../../shared/interfaces/user-repository';
+import { UserData, User } from '@src/domain/entities';
+import { Either, InvalidNameError, InvalidEmailError, InvalidAgeError, EmailAlreadyExistsError, UserNotFoundError, left, right } from '@src/domain/errors';
+import { UserRepository } from '@src/domain/repositories';
+import { UseCase } from '../use-case';
 
 type EditUserUseCaseReturn = Either<InvalidNameError | InvalidEmailError | InvalidAgeError | EmailAlreadyExistsError | UserNotFoundError, UserData>;
 

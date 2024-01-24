@@ -1,4 +1,5 @@
-import { InvalidParameterError, Pagination } from '@src/entities';
+import { Pagination } from '@src/domain/entities';
+import { InvalidParameterError } from '@src/domain/errors';
 
 describe('Pagination entity', () => {
   it('should create a pagination instance when parameters are valid', async () => {

@@ -1,7 +1,7 @@
-import { Pagination } from '@src/entities';
+import { Pagination } from '@src/domain/entities';
 import { UserBuilder } from '@test/builders/user-builder';
 import { InMemoryUserRepository } from './in-memory-user-repository';
-import { UserData } from '@src/entities';
+import { UserData } from '@src/domain/entities';
 
 describe('In Memory User Repository', () => {
 

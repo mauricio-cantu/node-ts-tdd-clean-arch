@@ -1,7 +1,6 @@
-import { Either, left, right } from '@src/shared/either';
+import { Either, InvalidAgeError, InvalidEmailError, InvalidNameError, left, right } from '@src/domain/errors';
+import { isValidAge, isValidEmail, isValidName } from '@src/domain/validation';
 import { UserData } from './user-data';
-import { InvalidAgeError, InvalidEmailError, InvalidNameError } from '../errors';
-import { isValidAge, isValidEmail, isValidName } from '@src/shared';
 
 export class User {
 

@@ -1,5 +1,4 @@
-import { UserData } from '@src/entities';
-import { Pagination, PaginationResult } from '../../entities/pagination/pagination';
+import { Pagination, PaginationResult, UserData } from '../entities';
 
 export interface UserRepository {
     findByEmail(email: string): Promise<UserData | null>

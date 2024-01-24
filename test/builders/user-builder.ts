@@ -1,4 +1,4 @@
-import { UserData } from '@src/entities';
+import { UserData } from '@src/domain/entities';
 
 export class UserBuilder {
 

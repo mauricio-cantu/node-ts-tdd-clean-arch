@@ -1,6 +1,6 @@
-import { UserData } from '@src/entities';
-import { Pagination, PaginationResult } from '@src/entities';
-import { UserRepository } from '@src/shared/interfaces/user-repository';
+import { UserData } from '@src/domain/entities';
+import { Pagination, PaginationResult } from '@src/domain/entities';
+import { UserRepository } from '@src/domain/repositories';
 
 export class InMemoryUserRepository implements UserRepository {
     

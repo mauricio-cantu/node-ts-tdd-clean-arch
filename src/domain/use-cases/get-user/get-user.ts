@@ -1,7 +1,7 @@
-import { UserData, UserNotFoundError } from '@src/entities';
-import { Either, left, right } from '@src/shared';
-import { UseCase } from '@src/shared/interfaces';
-import { UserRepository } from '@src/shared/interfaces/user-repository';
+import { UserData } from '@src/domain/entities';
+import { Either, left, right, UserNotFoundError } from '@src/domain/errors';
+import { UseCase } from '@src/domain/use-cases';
+import { UserRepository } from '@src/domain/repositories';
 
 export class GetUserUseCase implements UseCase {
 

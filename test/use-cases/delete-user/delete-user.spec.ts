@@ -1,5 +1,6 @@
-import { UserData, UserNotFoundError } from '@src/entities';
-import { DeleteUserUseCase } from '@src/use-cases';
+import { UserData } from '@src/domain/entities';
+import { UserNotFoundError } from '@src/domain/errors';
+import { DeleteUserUseCase } from '@src/domain/use-cases';
 import { UserBuilder } from '@test/builders/user-builder';
 import { InMemoryUserRepository } from '@test/doubles/repositories/in-memory-user-repository/in-memory-user-repository';
 

@@ -1,5 +1,6 @@
-import { InvalidParameterError, Pagination, PaginationResult, UserData } from '@src/entities';
-import { GetUsersRequestData, GetUsersUseCase } from '@src/use-cases';
+import { Pagination, PaginationResult, UserData } from '@src/domain/entities';
+import { InvalidParameterError } from '@src/domain/errors';
+import { GetUsersRequestData, GetUsersUseCase } from '@src/domain/use-cases';
 import { InMemoryUserRepository } from '@test/doubles/repositories/in-memory-user-repository/in-memory-user-repository';
 
 describe('GetUsersUseCase', () => {
