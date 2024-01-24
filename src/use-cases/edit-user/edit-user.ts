@@ -13,7 +13,7 @@ export class EditUserUseCase implements UseCase {
     const user = await this.userRepository.findById(<number> data.id);
     
     if(!user) {
-      return left(new UserNotFoundError(data.email));
+      return left(new UserNotFoundError());
     }
     const userWithEmail = await this.userRepository.findByEmail(data.email);
     if(userWithEmail && userWithEmail.id !== user.id) {

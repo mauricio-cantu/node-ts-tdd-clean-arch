@@ -10,7 +10,7 @@ export class DeleteUserUseCase implements UseCase {
   async execute (user: UserData): Promise<Either<UserNotFoundError, null>> {
     const userFound = await this.userRepository.findById(<number> user.id);
     if (!userFound) {
-      return left(new UserNotFoundError(user.email));
+      return left(new UserNotFoundError());
     }
     await this.userRepository.delete(<number> user.id);
     return right(null);

@@ -1,7 +1,7 @@
 export class UserNotFoundError extends Error {
   name = 'UserNotFoundError';
 
-  constructor (email: string) {
-    super(`User ${email} not found`);
+  constructor () {
+    super('User not found');
   }
 }
