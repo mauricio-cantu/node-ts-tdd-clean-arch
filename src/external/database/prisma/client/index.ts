@@ -1,1 +1,1 @@
-export * from './singleton-prisma-client'
+export * from './singleton-prisma-client';
