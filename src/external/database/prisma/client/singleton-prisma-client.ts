@@ -10,3 +10,5 @@ export class SingletonPrismaClient {
     return SingletonPrismaClient.instance;
   }
 }
+
+export default SingletonPrismaClient.getInstance();

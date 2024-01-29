@@ -18,30 +18,15 @@ export class UserBuilder {
     return this;
   }
 
+  withEmail (email: string) {
+    this.user.email = email;
+    return this;
+  }
+
   withInvalid (...props: (keyof Omit<UserData, 'id'>)[]): UserBuilder {
     props.forEach(prop => {
       this.user[prop] = <never> this.getInvalidProp(prop);
     });
-    return this;
-  }
-
-  withInvalidFirstName (): UserBuilder {
-    this.withInvalid('firstName');
-    return this;
-  }
-
-  withInvalidLastName (): UserBuilder {
-    this.withInvalid('lastName');
-    return this;
-  }
-
-  withInvalidAge (): UserBuilder {
-    this.withInvalid('age');
-    return this;
-  }
-
-  withInvalidEmail (): UserBuilder {
-    this.withInvalid('email');
     return this;
   }
 

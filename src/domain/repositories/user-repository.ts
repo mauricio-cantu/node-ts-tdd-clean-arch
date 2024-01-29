@@ -5,6 +5,6 @@ export interface UserRepository {
     add(user: UserData): Promise<UserData>
     findById(userId: number): Promise<UserData | null>
     findAll(pagination: Pagination): Promise<PaginationResult<UserData>>
-    edit(user: UserData): Promise<UserData | null>
+    edit(user: UserData): Promise<UserData>
     delete(userId: number): Promise<void>
 }

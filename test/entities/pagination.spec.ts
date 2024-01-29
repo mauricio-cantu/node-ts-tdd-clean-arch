@@ -16,4 +16,9 @@ describe('Pagination entity', () => {
     const pagination = Pagination.create({ limit: 10, page: -10 });
     expect(pagination.value).toBeInstanceOf(InvalidParameterError);
   });
+
+  it('should return error when limit exceeds max limit', async () => {
+    const pagination = Pagination.create({ limit: 50, page: -10 });
+    expect(pagination.value).toBeInstanceOf(InvalidParameterError);
+  });
 });

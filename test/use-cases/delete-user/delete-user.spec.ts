@@ -30,6 +30,7 @@ describe('Delete User Use Case', () => {
     const { sut } = makeSut();
     const response = await sut.execute(user);
     expect(response.isLeft()).toBe(true);
+    expect(response.isRight()).toBe(false);
     expect(response.value).toBeInstanceOf(UserNotFoundError);
   });
 });

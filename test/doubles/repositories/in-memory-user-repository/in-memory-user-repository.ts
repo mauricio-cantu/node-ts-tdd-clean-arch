@@ -42,9 +42,8 @@ export class InMemoryUserRepository implements UserRepository {
     return this._data.find((user) => user.email === email) || null;
   }
 
-  async edit (user: UserData): Promise<UserData | null> {
+  async edit (user: UserData): Promise<UserData> {
     const userIndex = this._data.findIndex((_user) => _user.id === user.id);
-    if (userIndex === -1) return null;
     this.data[userIndex] = user;
     return user;
   }

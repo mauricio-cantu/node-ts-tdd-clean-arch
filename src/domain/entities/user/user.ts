@@ -26,10 +26,6 @@ export class User {
     return this._age;
   }
 
-  public get id () {
-    return this._id;
-  }
-
   private constructor (firstName: string, lastName: string, email: string, age: number, id?: number) {
     this._firstName = firstName;
     this._lastName = lastName;

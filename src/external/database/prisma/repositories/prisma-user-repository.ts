@@ -44,9 +44,9 @@ export class PrismaUserRepository implements UserRepository {
     };
   }
 
-  async edit (user: UserData): Promise<UserData | null> {
-    const updatedUser = await this.prisma.user.update({ where: { id: user.id }, data: user });
-    return updatedUser ? this.toAppShape(updatedUser) : null;
+  async edit (user: UserData): Promise<UserData> {
+    const updatedUser = await this.prisma.user.update({ where: { id: user.id }, data: this.toDbShape(user) });
+    return this.toAppShape(updatedUser);
   }
 
   async delete (userId: number): Promise<void> {
